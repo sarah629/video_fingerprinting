@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "video-fingerprinting"
+version = "0.1.0"
+description = ""
+authors = ["Hadi Houssainy <hadihoussainy75@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+opencv-python = "^4.9.0.80"
+numpy = "^1.26.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
