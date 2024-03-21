@@ -9,7 +9,6 @@ from config import Config
 def load_and_store(folder_path, conn):
     cur = conn.cursor()
 
-    # Create table if it doesn't exist (adjust column names if needed)
     cur.execute(
         """
       CREATE TABLE IF NOT EXISTS data (

@@ -18,7 +18,7 @@ def process_frame(frame, N, M):
                 j * block_width : (j + 1) * block_width,
             ]
             centroids_matrix[i, j] = calculate_gradient_centroids(block)
-    return centroids_matrix
+    return np.array(centroids_matrix).flatten()
 
 
 def calculate_gradient_centroids(block):
@@ -72,5 +72,4 @@ if __name__ == "__main__":
     ):
         fingerprint_path = os.path.join(output_dir, f"{index}.pkl")
         with open(fingerprint_path, "wb") as f:
-            print(fingerprint)
             pickle.dump(fingerprint, f)

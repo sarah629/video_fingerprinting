@@ -51,9 +51,9 @@ def compute_scores(input_fingerprints, query):
     for q, f in zip(query, input_fingerprints):
         video_name, _, fingerprint = q
 
-        score = match_fingerprints(fingerprint, f)
+        score = match_fingerprints(pickle.loads(fingerprint), f)
 
-        if scores[video_name]:
+        if video_name in scores:
             scores[video_name].append(score)
         else:
             scores[video_name] = [score]

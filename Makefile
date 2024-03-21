@@ -21,7 +21,7 @@ create_database:
 .PHONY: setup_database
 setup_database: generate_fingerprints create_database
 	@echo "Setting Up the Database in $(DB_DIR)..."
-	poetry run python ./src/setup_database.py $(VIDEO_DIR) $(DB_DIR)
+	poetry run python ./src/setup_database.py $(OUTPUT_DIR) $(DB_DIR)
 
 .PHONY: generate_fingerprints
 generate_fingerprints:
@@ -34,3 +34,10 @@ generate_fingerprints:
 			echo "Error processing $$video"; \
 		fi \
 	done
+
+
+.PHONY: test
+test: 
+	@echo "Testing with input $(input)"
+
+	poetry run python ./src/matching.py "$(input)" $(DB_DIR)
